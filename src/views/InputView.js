@@ -7,6 +7,13 @@ const InputView = {
       callback
     );
   },
+
+  readPairInfo(callback) {
+    Console.readLine(
+      '과정, 레벨, 미션을 선택하세요.\nex) 백엔드, 레벨1, 자동차경주\n',
+      callback
+    );
+  },
 };
 
 module.exports = InputView;

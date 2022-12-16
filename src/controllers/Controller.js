@@ -21,7 +21,10 @@ class Controller {
 
   pairMatching() {
     OutPutView.printAppInfo();
+    InputView.readPairInfo((pairInfo) => this.handlePairInfo(pairInfo));
   }
+
+  handlePairInfo(pairInfo) {}
 
   pairLookup() {
     console.log('페어 조회를 합니다.');
