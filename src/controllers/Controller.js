@@ -1,4 +1,4 @@
-const { InputView } = require('../views/IOView');
+const { InputView, OutPutView } = require('../views/IOView');
 
 class Controller {
   start() {
@@ -20,7 +20,7 @@ class Controller {
   }
 
   pairMatching() {
-    console.log('페어 매칭을 합니다.');
+    OutPutView.printAppInfo();
   }
 
   pairLookup() {
