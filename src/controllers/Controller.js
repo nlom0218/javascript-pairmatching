@@ -1,6 +1,10 @@
+const Repository = require('../data/Repository');
+const PairGenerator = require('../models/PairGenerator');
 const { InputView, OutPutView } = require('../views/IOView');
 
 class Controller {
+  #pairRepo = new Repository();
+
   start() {
     this.requestAppFunction();
   }
@@ -24,7 +28,12 @@ class Controller {
     InputView.readPairInfo((pairInfo) => this.handlePairInfo(pairInfo));
   }
 
-  handlePairInfo(pairInfo) {}
+  handlePairInfo(pairInfo) {
+    pairInfo = pairInfo.split(', ');
+    const newPair = new PairGenerator(pairInfo);
+    this.#pairRepo.addPair(newPair);
+    OutPutView.printPairs(newPair.getPair());
+  }
 
   pairLookup() {
     console.log('페어 조회를 합니다.');
