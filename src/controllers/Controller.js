@@ -30,6 +30,11 @@ class Controller {
 
   handlePairInfo(pairInfo) {
     pairInfo = pairInfo.split(', ');
+    this.actionAboutNewPair(pairInfo);
+    this.requestAppFunction();
+  }
+
+  actionAboutNewPair(pairInfo) {
     const newPair = new PairGenerator(pairInfo);
     this.#pairRepo.addPair(newPair);
     OutPutView.printPairs(newPair.getPair());
