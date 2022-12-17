@@ -3,7 +3,6 @@ const Data = require('../data/Data');
 
 const OutPutView = {
   printAppInfo() {
-    OutPutView.printBlack();
     OutPutView.printDivied();
     OutPutView.printProcess();
     OutPutView.printMission();
@@ -24,14 +23,14 @@ const OutPutView = {
   printPairs(pairs) {
     Console.print('\n페어 매칭 결과입니다.');
     pairs.forEach((pair) => OutPutView.printPair(pair));
-    OutPutView.printBlack();
+    OutPutView.printBlank();
   },
 
   printPair(pair) {
     Console.print(pair.join(' : '));
   },
 
-  printBlack() {
+  printBlank() {
     Console.print(' ');
   },
 
