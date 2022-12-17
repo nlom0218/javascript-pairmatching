@@ -1,6 +1,6 @@
 const Repository = require('../data/Repository');
 const Pair = require('../models/Pair');
-const { InputView, OutPutView } = require('../views/IOView');
+const { InputView, OutPutView, quit } = require('../views/IOView');
 
 class Controller {
   #pairRepo = new Repository();
@@ -21,7 +21,7 @@ class Controller {
 
     if (appFn === '3') return this.pairReset();
 
-    console.log('앱을 종료합니다.');
+    this.quit();
   }
 
   requestPairMatching(isRematch) {
@@ -69,6 +69,10 @@ class Controller {
     this.#pairRepo.resetPair();
     OutPutView.printReset();
     this.requestAppFunction();
+  }
+
+  quit() {
+    quit();
   }
 }
 
