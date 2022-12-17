@@ -37,6 +37,10 @@ const OutPutView = {
   printDivied() {
     Console.print('#############################################');
   },
+
+  printReset() {
+    Console.print('\n초기화 되었습니다.\n');
+  },
 };
 
 module.exports = OutPutView;

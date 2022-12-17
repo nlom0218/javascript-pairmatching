@@ -66,7 +66,9 @@ class Controller {
   }
 
   pairReset() {
-    console.log('페어 초기화를 합니다.');
+    this.#pairRepo.resetPair();
+    OutPutView.printReset();
+    this.requestAppFunction();
   }
 }
 

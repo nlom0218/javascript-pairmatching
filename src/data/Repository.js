@@ -11,6 +11,10 @@ class Repository {
     console.log(this.#pairList);
   }
 
+  resetPair() {
+    this.#pairList = [];
+  }
+
   isExistSamePairInfo(pairInfo) {
     return this.#filterPairs(pairInfo).length !== 0;
   }
